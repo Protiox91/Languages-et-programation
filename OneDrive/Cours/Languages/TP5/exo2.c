@@ -4,6 +4,7 @@
 int main(){
 
     int i,n;
+    char chaine;
     puts("Veuillez entrer le nombre de caractères");
     scanf("%d", &n);
     int *tab = malloc(n * __SIZEOF_INT__);

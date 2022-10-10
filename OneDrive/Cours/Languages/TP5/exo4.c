@@ -32,9 +32,9 @@ void main ( )
         j++;
     }
     if (c==1){
-            printf("Les deux chaine de caractere sont identiques");
+        printf("Les deux chaine de caractere sont identiques");
     }
     else{
-            printf("Les deux chaine de caractere ne sont pas identiques");
+        printf("Les deux chaine de caractere ne sont pas identiques");
     }
 }
