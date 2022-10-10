@@ -19,4 +19,5 @@ int main(){
     {
         tab[i] = chaine[i];
     }
+    printf("%d",&tab);
 }
