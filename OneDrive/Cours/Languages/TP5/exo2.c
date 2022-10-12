@@ -4,7 +4,7 @@
 
 int main(){
     int num, len=0;
-    int i,j,c,n;
+    int i=0,j=0,c=1,n;
     char incr;
     char chaine;
     puts("Veuillez entrer le nombre de caractères à entrer");
@@ -19,17 +19,26 @@ int main(){
     chai = malloc((len+1)*sizeof(char));
 
 
-    while (i<5 && j<5)
+    while (i<n && c==1)
     {
-        if (a[i]==b[j]){
+        puts("Veuillez entrer le chiffre");
+        scanf("%c", &incr);
+
+        for (j=0;j!=n;j++){
+            if (atoi(incr) == i){
+                chai[i] = incr;
+                c=1
+            }else{
+                c=0
+            }
+        }
+        if (c==0){
+            i--;
             c=1;
-        }else
-        {
-            c=0;
         }
         i++;
-        j++;
     }
+
     for (i=0;i!=n;i++)
     {
         puts("Veuillez entrer le chiffre");
