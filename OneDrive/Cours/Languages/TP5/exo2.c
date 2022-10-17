@@ -3,52 +3,48 @@
 #include<math.h>
 
 int main(){
-    int num, len=0;
-    int i=0,j=0,c=1,n;
+    int * tabentier; char * tabchar;
+    int nombre,conver,c,d,i,j,entier;
     char incr;
-    char chaine;
+
     puts("Veuillez entrer le nombre de caractères à entrer");
-    scanf("%d", &n);
-    int *tab;
-    char *chai;
+    scanf("%d", &nombre);
+    tabentier = (int *)malloc((nombre + 1) * sizeof(int));
+    tabchar = (char *)malloc((nombre + 1) * sizeof(char));
 
-    
-    len=(num==0)?1:log10(num)+1;  
+    // Entrée chiffre par chiffre en caractere dans une chaine de caractères et verification si entre 0 et 9 
+    for (int i = 0; i < nombre; ++i) {
+        c = 0;
+        while(c==0){
+            puts("Veuillez entrer le caractere en chiffre compris entre 0 et 9");
+            scanf("%c", &incr);
+            conver = incr - '0';
+            for (int j = 0; i < 10; ++i) {
+                if (conver == j){
+                    tabchar[i] = incr;
+                    printf("Le caractere est %c",tabchar[i]);
 
-    tab = malloc((len+1)*sizeof(int));
-    chai = malloc((len+1)*sizeof(char));
-
-
-    while (i<n && c==1)
-    {
-        puts("Veuillez entrer le chiffre");
-        scanf("%c", &incr);
-
-        for (j=0;j!=n;j++){
-            if (atoi(incr) == i){
-                chai[i] = incr;
-                c=1
-            }else{
-                c=0
+                    c=1;
+                }else{
+                    puts("Ce chiffre n'est pas compris entre 0 et 9");
+                }
             }
         }
-        if (c==0){
-            i--;
-            c=1;
-        }
-        i++;
+    }
+    printf("%s",tabchar);
+
+    // Conversion d'une chaine de caractere en un tableau d'entier 
+    for (int i = 0; i < nombre; ++i) {
+        tabentier[i] = tabchar[i] - '0'; // Conversion en int 
+        printf("%d",tabentier[i]); // Test affichage
     }
 
-    for (i=0;i!=n;i++)
-    {
-        puts("Veuillez entrer le chiffre");
-        for 
-        scanf("%c", &chai[i]);
+    // Conversion tableau d'entier en une seule valeur 
+    for (int i = 0; i < nombre; ++i) {
+        entier = entier + (tabentier[i]*pow(10,i));
     }
-
-    for (i=0;i!=n;i++)
-    {
-        tab[i] = chai[i];
-    }
-    printf("%d",&tab);
+    printf("%d",entier);
+    
+    free(tabentier); 
+    free(tabchar);
 }
