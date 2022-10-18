@@ -13,7 +13,7 @@ typedef struct
     char modele[11];
 }t_Voiture;
 
-void Saisie(t_Voiture *ptrV1);
-void Affiche(t_Voiture *voiture):
+void Saisie(t_Voiture *voiture);
+void Affiche(t_Voiture *voiture);
 
 #endif

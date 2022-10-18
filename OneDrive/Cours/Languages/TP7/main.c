@@ -1,12 +1,14 @@
+#include<stdio.h>
+#include<stdlib.h>
 #include "voiture.h"
 
 #if 1 
 
-int main(){
-    t_voiture V1, V2;
-    t_voiture* ptrV2, ptrV3;
+int main(int argc, const char * argv[]){
+    t_Voiture V1, V2;
+    t_Voiture *ptrV2, *ptrV3;
     ptrV2 = &V2;
-    ptrV3 = (t_voiture*)malloc(sizeof(t_voiture));
+    ptrV3=(t_Voiture*)malloc(sizeof(t_Voiture));
 
     Affiche(&V1);
     Saisie(&V2);
@@ -18,7 +20,6 @@ int main(){
     Saisie(ptrV3);
 
     free(ptrV3);
-    ptrV3 = NULL;
 
     return 0;
 }
